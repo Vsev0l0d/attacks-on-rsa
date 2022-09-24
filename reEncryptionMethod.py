@@ -1,3 +1,5 @@
+from utils import print_number_to_text
+
 C = '''
 90401727778
 50205386780
@@ -24,4 +26,4 @@ for y in list(map(int, C.split())):
         res = yi
         yi = pow(yi, e, N)
 
-    print(res)
+    print_number_to_text(res)

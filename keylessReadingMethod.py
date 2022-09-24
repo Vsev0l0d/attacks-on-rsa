@@ -1,3 +1,5 @@
+from utils import print_number_to_text
+
 N = 319418480417
 e1 = 602087
 e2 = 523639
@@ -45,4 +47,4 @@ a, r, s = gcd_extended(e1, e2)
 y1 = list(map(int, C1.split()))
 y2 = list(map(int, C2.split()))
 for i in range(len(y1)):
-    print(pow(y1[i], r, N) * pow(y2[i], s, N) % N)
+    print_number_to_text(pow(y1[i], r, N) * pow(y2[i], s, N) % N)
