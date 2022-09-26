@@ -70,9 +70,9 @@ c3 = C3.split()
 
 full_message = ''
 for i in range(len(c1)):
-    S1 = Decimal(c1[i]) * Decimal(n1) * Decimal(m1)
-    S2 = Decimal(c2[i]) * Decimal(n2) * Decimal(m2)
-    S3 = Decimal(c3[i]) * Decimal(n3) * Decimal(m3)
+    S1 = int(c1[i]) * int(n1) * int(m1)
+    S2 = int(c2[i]) * int(n2) * int(m2)
+    S3 = int(c3[i]) * int(n3) * int(m3)
 
     S = S1 + S2 + S3
     summodM0 = S % M0
