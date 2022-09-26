@@ -1,4 +1,4 @@
-from utils import print_number_to_text
+from utils import to_text
 
 N = 78908333904637
 e = 2821057
@@ -30,4 +30,4 @@ f = round((p - 1) * (q - 1))
 d = pow(e, -1, f)
 
 for c in C.split():
-    print_number_to_text(pow(int(c), d, N))
+    print(to_text(pow(int(c), d, N)), end='')

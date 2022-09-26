@@ -1,5 +1,5 @@
 from decimal import *
-from utils import print_number_to_text
+from utils import to_text
 
 N1 = 441716293693
 N2 = 442258294987
@@ -69,4 +69,4 @@ for i in range(len(c1)):
     S3 = Decimal(c3[i]) * Decimal(n3) * Decimal(m3)
 
     summodM0 = (S1 + S2 + S3) % M0
-    print_number_to_text(round(summodM0 ** (Decimal(1 / 3))))
+    print(to_text(round(summodM0 ** (Decimal(1 / 3)))), end='')
