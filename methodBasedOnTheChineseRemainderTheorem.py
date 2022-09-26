@@ -50,8 +50,9 @@ C3 = '''
 398872645339
 '''
 
-M0 = N1 * N2 * N3
+print(f'N1 = {N1}\nN2 = {N2}\nN3 = {N3}\nC1 = {C1}\nC2 = {C2}\nC3 = {C3}\n')
 
+M0 = N1 * N2 * N3
 m1 = N2 * N3
 m2 = N1 * N3
 m3 = N2 * N1
@@ -59,14 +60,25 @@ n1 = pow(m1, -1, N1)
 n2 = pow(m2, -1, N2)
 n3 = pow(m3, -1, N3)
 
+print(f'M0 = N1 * N2 * N3 = {M0}')
+print(f'm1 = N2 * N3 = {m1}\nm2 = N1 * N3 = {m2}\nm3 = N2 * N1 = {m3}\n')
+print(f'n1 ≡ m1^(-1) (mod N1) = {n1}\nn2 ≡ m2^(-1) (mod N2) = {n2}\nn3 ≡ m3^(-1) (mod N3) = {n3}\n')
+
 c1 = C1.split()
 c2 = C2.split()
 c3 = C3.split()
 
+full_message = ''
 for i in range(len(c1)):
     S1 = Decimal(c1[i]) * Decimal(n1) * Decimal(m1)
     S2 = Decimal(c2[i]) * Decimal(n2) * Decimal(m2)
     S3 = Decimal(c3[i]) * Decimal(n3) * Decimal(m3)
 
-    summodM0 = (S1 + S2 + S3) % M0
-    print(to_text(round(summodM0 ** (Decimal(1 / 3)))), end='')
+    S = S1 + S2 + S3
+    summodM0 = S % M0
+    message = round(summodM0 ** (Decimal(1 / 3)))
+    print(f'S{i} = c1[{i}]*n1*m1 + c2[{i}]*n2*m2 + c3[{i}]*n3*m3 = {S}')
+    print(f'summodM0[{i}] = S{i} % M0 = {summodM0}\nmessage{i} = summodM0[{i}]^(1/3) = {message}\n')
+    full_message += to_text(message)
+
+print(f'\nfull_message = {full_message}')

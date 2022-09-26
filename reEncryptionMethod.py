@@ -21,9 +21,7 @@ e = 1163719
 
 for y in list(map(int, C.split())):
     yi = pow(y, e, N)
-
     while yi != y:
         res = yi
         yi = pow(yi, e, N)
-
     print(to_text(res), end='')

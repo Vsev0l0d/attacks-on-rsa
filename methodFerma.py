@@ -17,11 +17,19 @@ C = '''
 65389528900590
 '''
 
-t = (N ** 0.5) // 1
+print(f'N = {N}\ne = {e}\nC = {C}\n')
+
+n = ((N ** 0.5) // 1) + 1
+print(f'n = [sqrt(N)] + 1 = {n}\n')
+i = 0
 while True:
-    t += 1
+    i += 1
+    t = n + i
+    print(f't{i} = n + {i} = {t}')
     w = (t ** 2) - N
+    print(f'w{i} = t{i}**2 - N = {w}\n')
     if (w ** 0.5) % 1 == 0:
+        print(f'sqrt(w{i}) = {w ** 0.5}\n')
         break
 
 p = t + w ** 0.5
@@ -29,5 +37,15 @@ q = t - w ** 0.5
 f = round((p - 1) * (q - 1))
 d = pow(e, -1, f)
 
-for c in C.split():
-    print(to_text(pow(int(c), d, N)), end='')
+print(f'p = t{i} + sqrt(w{i}) = {p}')
+print(f'q = t{i} - sqrt(w{i}) = {q}')
+print(f'f = (p - 1) * (q - 1) = {f}')
+print(f'd ≡ e^(-1) (mod f) = {d}\n')
+
+message = ""
+for i, c in enumerate(C.split()):
+    m = pow(int(c), d, N)
+    print(f'm{i} = {m}')
+    message += to_text(m)
+
+print(f'\nmessage = {message}')

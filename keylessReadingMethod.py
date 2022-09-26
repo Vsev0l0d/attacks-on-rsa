@@ -43,8 +43,19 @@ def gcd_extended(num1, num2):
     return div, y - (num2 // num1) * x, x
 
 
+print(f'N = {N}\ne1 = {e1}\ne2 = {e2}\nC1 = {C1}\nC2 = {C2}\n')
+
 a, r, s = gcd_extended(e1, e2)
-y1 = list(map(int, C1.split()))
-y2 = list(map(int, C2.split()))
-for i in range(len(y1)):
-    print(to_text(pow(y1[i], r, N) * pow(y2[i], s, N) % N), end='')
+print(f'e1∙r + e2∙s = ±1\n\tr = {r}\n\ts = {s}\n')
+
+c1 = list(map(int, C1.split()))
+c2 = list(map(int, C2.split()))
+message = ""
+for i in range(len(c1)):
+    c1r = pow(c1[i], r, N)
+    c2s = pow(c2[i], s, N)
+    m = c1r * c2s % N
+    print(f'c1[{i}]^r (mod N) = {c1r}\nc2[{i}]^s (mod N) = {c2s}\nm{i} = {m}\n')
+    message += to_text(m)
+
+print(f'\nmessage = {message}')
