@@ -70,11 +70,7 @@ c3 = list(map(int, C3.split()))
 
 full_message = ''
 for i in range(len(c1)):
-    S1 = c1[i] * n1 * m1
-    S2 = c2[i] * n2 * m2
-    S3 = c3[i] * n3 * m3
-
-    S = S1 + S2 + S3
+    S = (c1[i] * n1 * m1) + (c2[i] * n2 * m2) + (c3[i] * n3 * m3)
     summodM0 = S % M0
     message = round(summodM0 ** (Decimal(1 / 3)))
     print(f'S{i} = c1[{i}]*n1*m1 + c2[{i}]*n2*m2 + c3[{i}]*n3*m3 = {S}')
