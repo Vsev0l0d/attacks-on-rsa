@@ -64,15 +64,15 @@ print(f'M0 = N1 * N2 * N3 = {M0}')
 print(f'm1 = N2 * N3 = {m1}\nm2 = N1 * N3 = {m2}\nm3 = N2 * N1 = {m3}\n')
 print(f'n1 ≡ m1^(-1) (mod N1) = {n1}\nn2 ≡ m2^(-1) (mod N2) = {n2}\nn3 ≡ m3^(-1) (mod N3) = {n3}\n')
 
-c1 = C1.split()
-c2 = C2.split()
-c3 = C3.split()
+c1 = list(map(int, C1.split()))
+c2 = list(map(int, C2.split()))
+c3 = list(map(int, C3.split()))
 
 full_message = ''
 for i in range(len(c1)):
-    S1 = int(c1[i]) * int(n1) * int(m1)
-    S2 = int(c2[i]) * int(n2) * int(m2)
-    S3 = int(c3[i]) * int(n3) * int(m3)
+    S1 = c1[i] * n1 * m1
+    S2 = c2[i] * n2 * m2
+    S3 = c3[i] * n3 * m3
 
     S = S1 + S2 + S3
     summodM0 = S % M0
