@@ -64,9 +64,9 @@ print(f'M0 = N1 * N2 * N3 = {M0}')
 print(f'm1 = N2 * N3 = {m1}\nm2 = N1 * N3 = {m2}\nm3 = N2 * N1 = {m3}\n')
 print(f'n1 ≡ m1^(-1) (mod N1) = {n1}\nn2 ≡ m2^(-1) (mod N2) = {n2}\nn3 ≡ m3^(-1) (mod N3) = {n3}\n')
 
-c1 = list(map(int, C1.split()))
-c2 = list(map(int, C2.split()))
-c3 = list(map(int, C3.split()))
+c1 = tuple(map(int, C1.split()))
+c2 = tuple(map(int, C2.split()))
+c3 = tuple(map(int, C3.split()))
 
 full_message = ''
 for i in range(len(c1)):

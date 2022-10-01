@@ -19,7 +19,7 @@ C = '''
 N = 144050016983
 e = 1163719
 
-for y in list(map(int, C.split())):
+for y in tuple(map(int, C.split())):
     yi = pow(y, e, N)
     while yi != y:
         res = yi

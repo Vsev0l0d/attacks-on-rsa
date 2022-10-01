@@ -48,8 +48,8 @@ print(f'N = {N}\ne1 = {e1}\ne2 = {e2}\nC1 = {C1}\nC2 = {C2}\n')
 a, r, s = gcd_extended(e1, e2)
 print(f'e1∙r + e2∙s = ±1\n\tr = {r}\n\ts = {s}\n')
 
-c1 = list(map(int, C1.split()))
-c2 = list(map(int, C2.split()))
+c1 = tuple(map(int, C1.split()))
+c2 = tuple(map(int, C2.split()))
 message = ""
 for i in range(len(c1)):
     c1r = pow(c1[i], r, N)
